@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome de Usuário</ion-label>
+    <ion-input type="text" [(ngModel)]="login.username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="login.password"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-button expand="full" routerLink="/login">Logar-se</ion-button>
+</ion-content>

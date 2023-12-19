@@ -1,0 +1,83 @@
+ion-content {
+    // Caminho para a imagem no seu projeto. Modifique conforme necessário.
+    --background: url('../../../assets/artbreeder-tuner-2023-12-13T22_03_31.723Z.jpeg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .um{
+    margin-top: 50%;
+  
+  }
+
+
+
+  .dois{
+   
+    
+  }
+
+  .top-image {
+    position: absolute;
+    top: 20px; /* Ajuste a posição conforme necessário */
+    left: 0px; /* Ajuste a posição conforme necessário */
+    z-index: 2; /* Z-index maior para a imagem de cima */
+  }
+  #animated-img {
+  position: absolute;
+  opacity: 0; /* Opacidade inicial da imagem - 0 é completamente transparente */
+  animation: fadeIn 1.5s forwards; /* Define a animação 'fadeIn' com duração de 1.5 segundos */
+  /* Adicionar prefixos para suportar diferentes navegadores */
+  -webkit-animation: fadeIn 1.5s forwards;
+  -moz-animation: fadeIn 1.5s forwards;
+  -o-animation: fadeIn 1.5s forwards;
+}
+
+/* Definição da animação de fade in */
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Opacidade final da imagem - 1 é completamente visível */
+  }
+}
+
+#amazon{
+    width: 90px;
+    margin-top: 40px;
+    position: absolute;
+    left: -100px; /* Posição inicial da imagem, fora da tela à esquerda */
+    animation: slideFromLeft 1.5s forwards; /* Define a animação 'slideFromLeft' com duração de 2 segundos */
+  }
+  
+  /* Definição da animação de deslizamento da esquerda para a direita */
+  @keyframes slideFromLeft {
+    to {
+      left: 0; /* Move a imagem para a posição 0 (esquerda da tela) */
+}
+  }
+
+#rededor{
+    margin-top: 45px;
+    position: absolute;
+    left: -100px; /* Posição inicial da imagem, fora da tela à esquerda */
+    animation: slideFromLeft 1.5s forwards; /* Define a animação 'slideFromLeft' com duração de 2 segundos */
+  }
+  
+  /* Definição da animação de deslizamento da esquerda para a direita */
+  @keyframes slideFromLeft {
+    to {
+      left: 0; /* Move a imagem para a posição 0 (esquerda da tela) */
+}
+  }
+
+  #empr{
+    margin-top: 20px;
+    position: absolute;
+    left: -100px; /* Posição inicial da imagem, fora da tela à esquerda */
+    animation: slideFromLeft 1.5s forwards; /* Define a animação 'slideFromLeft' com duração de 2 segundos */
+  }
+  
+  /* Definição da animação de deslizamento da esquerda para a direita */
+  @keyframes slideFromLeft {
+    to {
+      left: 0; /* Move a imagem para a posição 0 (esquerda da tela) */
+}
+  }
