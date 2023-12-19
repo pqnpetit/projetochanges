@@ -1,24 +1,61 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet  id="main-content"></ion-router-outlet>
+
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item [routerLink]="'/home'">
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Adicione outros itens do menu com seus respectivos links aqui -->
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+  <ion-tabs>
+    
+    <ion-tab-bar slot="bottom" >
+    
+      <ion-tab-button tab="home" routerLink="/Home">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+  
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        Pesquisar
+      </ion-tab-button>
+  
+      <ion-tab-button tab="store">
+        <ion-icon name="bag-handle"></ion-icon>
+        Loja
+      </ion-tab-button>
+      
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        Configurações
+      </ion-tab-button>
+  
+      <ion-tab-button tab="profile">
+        <ion-icon name="person"></ion-icon>
+        Perfil
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+
+
+
+
 </ion-app>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="play-circle"></ion-icon>
-      Listen Now
-    </ion-tab-button>
-    <ion-tab-button tab="radio">
-      <ion-icon name="radio"></ion-icon>
-      Radio
-    </ion-tab-button>
-    <ion-tab-button tab="library">
-      <ion-icon name="library"></ion-icon>
-      Library
-    </ion-tab-button>
-    <ion-tab-button tab="search">
-      <ion-icon name="search"></ion-icon>
-      Search
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

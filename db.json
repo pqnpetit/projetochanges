@@ -34,6 +34,26 @@
       "username": "mano",
       "password": "111",
       "id": 7
+    },
+    {
+      "username": "piru",
+      "password": "piruzao",
+      "id": 8
+    },
+    {
+      "username": "oi",
+      "password": "oii",
+      "id": 9
+    },
+    {
+      "username": "piro",
+      "password": "piru",
+      "id": 10
+    },
+    {
+      "username": "caceta",
+      "password": "cacetao",
+      "id": 11
     }
   ]
 }

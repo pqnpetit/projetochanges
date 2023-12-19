@@ -50,4 +50,5 @@ usuarioLogado: boolean = false; // Inicialize como false por padrão ou verifiqu
        
         
     }
-  }
+}
+  
