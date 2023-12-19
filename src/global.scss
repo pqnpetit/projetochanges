@@ -26,10 +26,15 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 ion-content {
-    --offset-bottom: auto!important;
-    --overflow: hidden;
-    overflow: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
+
+* {
+  background-color: black;
+  color: white;
+}
