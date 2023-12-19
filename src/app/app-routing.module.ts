@@ -17,6 +17,18 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./paginas/cadastro/cadastro.module').then(m => m.CadastroPageModule)
+  },
+  {
+    path: 'pesquisar',
+    loadChildren: () => import('./paginas/pesquisar/pesquisar.module').then( m => m.PesquisarPageModule)
+  },
+  {
+    path: 'loja',
+    loadChildren: () => import('./paginas/loja/loja.module').then( m => m.LojaPageModule)
+  },
+  {
+    path: 'configuracao',
+    loadChildren: () => import('./paginas/configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
   }
 ];
 
