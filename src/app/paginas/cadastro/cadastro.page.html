@@ -4,16 +4,28 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+
+
+
+
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Nome de Usuário</ion-label>
+
+  <div class="image-container">
+    <img src="" class="top-image" id="animated-img">
+  
+  </div>
+
+  <ion-item class="um"  color="translucent"> 
+    <ion-label class ="loginsenha" position="floating">Nome de Usuário</ion-label>
     <ion-input type="text" [(ngModel)]="login.username"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label position="floating">Senha</ion-label>
+  <ion-item class="dois"  color="info">
+    <ion-label class ="loginsenha" position="floating">Senha</ion-label>
     <ion-input type="password" [(ngModel)]="login.password"></ion-input>
   </ion-item>
   
-  <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
-  <ion-button expand="full" routerLink="/login">Logar-se</ion-button>
+  <ion-button class="half-half-button n1" fill="clear" expand="full" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-button  class="half-half-button n1" fill="clear"expand="full" routerLink="/login">Logar-se</ion-button>
 </ion-content>

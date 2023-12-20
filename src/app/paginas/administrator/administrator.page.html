@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let login of logins">
+      <!-- Exibir detalhes do login -->
+      <ion-label>{{ login.username }}</ion-label>
+      <ion-label>{{ login.password }}</ion-label>
+      <!-- Incluir botões para editar e deletar -->
+      <ion-button (click)="updateLogin(login.id, newData)">Editar</ion-button>
+      <ion-button (click)="deleteLogin(login.id)">Deletar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

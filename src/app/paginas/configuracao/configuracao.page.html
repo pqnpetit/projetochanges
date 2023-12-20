@@ -14,19 +14,21 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Idioma</ion-label>
-      <ion-select [(ngModel)]="selectedLanguage">
+      <ion-label style="color: aliceblue;" position="stacked">Idioma</ion-label>
+      <ion-select [(ngModel)]="selectedLanguage" (ionChange)="changeLanguage()">
         <ion-select-option value="en">English</ion-select-option>
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="pt">Português</ion-select-option>
       </ion-select>
     </ion-item>
+    
+    
 
     <!-- Adicione mais opções de configuração conforme necessário -->
   </ion-list>
 
   <!-- Botão de salvar configurações -->
-  <ion-button class="half-half-button" fill="clear" expand="full">
-    Comprar
+  <ion-button class="half-half-button" fill="clear" expand="full" (click)="changeLanguage()">
+    Salvar
   </ion-button>
 </ion-content>

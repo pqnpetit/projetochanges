@@ -7,8 +7,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage {
-  login: any = {
+    login: any = {
     username: '',
+    adm: false,
     password: ''
   };
 

@@ -6,12 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-
+  selectedLanguage = 'pt'; // Defina o idioma padrão ou um idioma inicial
   private appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     
   
   ];
 
-  constructor() {}
 }

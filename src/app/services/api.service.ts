@@ -51,6 +51,18 @@ export class ApiService {
     );
   }
 
+  getAllLogins() {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  updateLogin(loginId: number, newData: any) {
+    return this.http.put<any>(`${this.apiUrl}/${loginId}`, newData);
+  }
+
+  deleteLogin(loginId: number) {
+    return this.http.delete<any>(`${this.apiUrl}/${loginId}`);
+  }
+
 }
   
   
