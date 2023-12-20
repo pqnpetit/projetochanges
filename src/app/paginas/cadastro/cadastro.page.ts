@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage {
-    login: any = {
+  login: any = {
     username: '',
     adm: false,
     password: ''
@@ -19,7 +19,6 @@ export class CadastroPage {
     this.apiService.cadastrarUsuario(this.login).subscribe(
       (response) => {
         console.log('Usuário cadastrado com sucesso:', response);
-        // Limpar o formulário após o cadastro
         this.limparFormulario();
       },
       (error) => {
@@ -31,6 +30,7 @@ export class CadastroPage {
   limparFormulario() {
     this.login = {
       username: '',
+      adm: false,
       password: ''
     };
   }

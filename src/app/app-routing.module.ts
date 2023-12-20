@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'administrator',
     loadChildren: () => import('./paginas/administrator/administrator.module').then( m => m.AdministratorPageModule)
+  },
+  {
+    path: 'edit',
+    loadChildren: () => import('./paginas/edit/edit.module').then( m => m.EditPageModule)
   }
 ];
 

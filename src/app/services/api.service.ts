@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; // Altere para o URL correto do seu backend
+  private apiUrl = 'http://localhost:3000/login'; // Altere para o URL correto do seu backend
   private loginUrl = 'http://localhost:3000/login';
   private products = new BehaviorSubject<any[]>([]);
   enableNotifications: boolean = false;
@@ -17,7 +18,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   cadastrarUsuario(usuario: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, usuario);
+    return this.http.post(`${this.apiUrl}`, usuario);
   }
 
 
@@ -27,7 +28,7 @@ export class ApiService {
 
     // Buscar todos os posts
      getUsersWithPosts(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/login`);
+    return this.http.get<any[]>(`${this.apiUrl}`);
   }
   
     // Adicionar um comentário a um post específico
@@ -56,12 +57,25 @@ export class ApiService {
   }
 
   updateLogin(loginId: number, newData: any) {
-    return this.http.put<any>(`${this.apiUrl}/${loginId}`, newData);
+    return this.http.put<any>(`${this.apiUrl}${loginId}`, newData);
   }
 
   deleteLogin(loginId: number) {
-    return this.http.delete<any>(`${this.apiUrl}/${loginId}`);
+    return this.http.delete<any>(`${this.apiUrl}${loginId}`);
   }
+
+  getUserById(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}${userId}`);
+  }
+
+  updateUser(userId: number, userData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}${userId}`, userData);
+  }
+
+  deleteUser(userId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}${userId}`);
+  }
+
 
 }
   
