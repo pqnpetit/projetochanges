@@ -14,6 +14,7 @@ import { PesquisarPage } from './pesquisar.page';
     FormsModule,
     IonicModule,
     PesquisarPageRoutingModule
+    
   ],
   declarations: [PesquisarPage]
 })

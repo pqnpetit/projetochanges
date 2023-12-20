@@ -1,13 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>loja</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Loja</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">loja</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <!-- Utilizando os dados do produto definido no TypeScript -->
+    <img [src]="product.url_da_imagem" alt="Product Image">
+    <ion-card-header>
+      <ion-card-title>{{ product.nome }}</ion-card-title>
+      <ion-card-subtitle>{{ product.descricao }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="secondary" (click)="buyProduct(product)">
+        Comprar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
   // Declare a propriedade newComment
   newComment = ''; // Variável para armazenar o novo comentário
 
-  constructor(private authService: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {}
 

@@ -20,35 +20,34 @@
     </ion-content>
   </ion-menu>
 
-
   <ion-tabs>
-    
-    <ion-tab-bar slot="bottom" >
-    
-      <ion-tab-button tab="home" routerLink="/Home">
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="home" routerLink="/home">
         <ion-icon name="home"></ion-icon>
         Home
       </ion-tab-button>
-  
-      <ion-tab-button tab="search">
+
+      <ion-tab-button tab="search" routerLink="/pesquisar">
         <ion-icon name="search"></ion-icon>
         Pesquisar
       </ion-tab-button>
-  
-      <ion-tab-button tab="store">
+
+        <ion-tab-button tab="store" routerLink="/loja">
         <ion-icon name="bag-handle"></ion-icon>
         Loja
       </ion-tab-button>
-      
-      <ion-tab-button tab="settings">
+
+      <ion-tab-button tab="settings" routerLink="/configuracao">
         <ion-icon name="settings"></ion-icon>
         Configurações
       </ion-tab-button>
-  
+      
       <ion-tab-button tab="profile">
         <ion-icon name="person"></ion-icon>
         Perfil
       </ion-tab-button>
+      <!-- Outras abas -->
     </ion-tab-bar>
   </ion-tabs>
 

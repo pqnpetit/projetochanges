@@ -3,86 +3,13 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "123456",
-      "posts": [
-        {
-          "id": 1,
-          "title": "Minha viagem",
-          "description": "Uma foto da minha viagem para a praia!",
-          "imageUrl": "URL_DA_IMAGEM",
-          "comments": [
-            {
-              "author": "Bob",
-              "text": "Que legal!"
-            }
-          ]
-        }
-      ]
+      "password": "123456"
     },
     {
       "id": 2,
       "username": "bb",
-      "password": "111",
-      "posts": []
-    },
-    {
-      "id": 3,
-      "username": "bbb",
-      "password": "111",
-      "posts": []
-    },
-    {
-      "id": 4,
-      "username": "naruto",
-      "password": "123",
-      "posts": []
-    },
-    {
-      "id": 5,
-      "username": "bruno",
-      "password": "123",
-      "posts": []
-    },
-    {
-      "id": 6,
-      "username": "gabriel",
-      "password": "123",
-      "posts": []
-    },
-    {
-      "id": 7,
-      "username": "mano",
-      "password": "111",
-      "posts": []
-    },
-    {
-      "id": 8,
-      "username": "piru",
-      "password": "piruzao",
-      "posts": []
-    },
-    {
-      "id": 9,
-      "username": "oi",
-      "password": "oii",
-      "posts": []
-    },
-    {
-      "id": 10,
-      "username": "piro",
-      "password": "piru",
-      "posts": []
-    },
-    {
-      "id": 11,
-      "username": "caceta",
-      "password": "cacetao",
-      "posts": []
-    },
-    {
-      "username": "biel",
-      "password": "111",
-      "id": 12
+      "password": "111"
     }
+    
   ]
 }

@@ -5,3 +5,14 @@ ion-menu {
 ion-menu ion-label {
   color: white; /* Define a cor do texto como branco */
 }
+
+/* Define o tamanho inicial dos ícones */
+ion-tab-button ion-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Define o efeito de zoom ao clicar */
+ion-tab-button:active ion-icon {
+  transform: scale(1.2);
+}
