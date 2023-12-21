@@ -12,8 +12,9 @@ export class CadastroPage {
 
 
   login: any = {
-    username: '',
+    id: '',
     adm: false,
+    username: '',
     password: ''
   };
 
@@ -33,8 +34,9 @@ export class CadastroPage {
 
   limparFormulario() {
     this.login = {
-      username: '',
+      id:'',
       adm: false,
+      username: '',
       password: ''
     };
   }

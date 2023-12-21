@@ -20,8 +20,8 @@
     },
     {
       "id": 4,
-      "username": "superior",
       "adm": false,
+      "username": "superior",
       "password": "123"
     },
     {
@@ -31,46 +31,22 @@
       "password": "petit"
     },
     {
+      "id": 6,
+      "adm": false,
+      "username": "lindao",
+      "password": "1234"
+    },
+    {
+      "id": 7,
+      "adm": false,
+      "username": "cabaço",
+      "password": "1234"
+    },
+    {
+      "id": 8,
+      "adm": false,
       "username": "patrick",
-      "adm": false,
-      "password": "1234",
-      "id": 6
-    },
-    {
-      "username": "bruno",
-      "adm": false,
-      "password": "1234",
-      "id": 7
-    },
-    {
-      "username": "brunaozao",
-      "adm": false,
-      "password": "1234",
-      "id": 12
-    },
-    {
-      "username": "gabrielzao",
-      "adm": false,
-      "password": "1234",
-      "id": 13
-    },
-    {
-      "username": "petitzin",
-      "adm": false,
-      "password": "1234",
-      "id": 23
-    },
-    {
-      "username": "petitzinzao",
-      "adm": false,
-      "password": "1234",
-      "id": 24
-    },
-    {
-      "username": "narutinhao",
-      "adm": "true",
-      "password": "123",
-      "id": 28
+      "password": "1234"
     }
   ],
   "posts": [
