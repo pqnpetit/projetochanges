@@ -13,7 +13,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./paginas/login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./paginas/login/login.module').then(m => m.LoginPageModule),
+    data: {
+      hideTabs: true // Identificador para ocultar os tabs nesta página
+    }
   },
   {
     path: 'cadastro',

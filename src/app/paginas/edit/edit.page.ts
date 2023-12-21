@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit , ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { NavController } from '@ionic/angular'; // Importe NavController
+
+interface Login {
+  id: number;
+  // Outras propriedades do login...
+}
 
 @Component({
   selector: 'app-edit',
@@ -8,54 +13,106 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./edit.page.scss'],
 })
 export class EditPage implements OnInit {
+  logins: any[] = [];
+  login: any[] = [];
+  loginEdit: any = null;
   
-  loginId!: number;
-  login: any = {
-    id: null,
-    username: '',
-    adm: false,
-    password: '',
-  };
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private navCtrl: NavController,private elementRef: ElementRef) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.loginId = +params['id'];
-      this.getUser(this.loginId);
-    });
+    this.carregarLogins(); // Chame a função para carregar os logins ao inicializar a página
   }
 
-  getUser(loginId: number) {
-    this.apiService.getUserById(loginId).subscribe(
+// Supondo que login seja um objeto com uma propriedade "password"
+// Esta função retorna uma string mascarada para a senha
+maskPassword(password: string): string {
+  return '*'.repeat(password.length);
+}
+
+
+
+
+  getAllLogins() {
+    this.apiService.getAllLogins().subscribe(
       (data) => {
-        this.login = data;
+        this.logins = data;
       },
       (error) => {
-        console.error('Erro ao obter os dados do usuário:', error);
+        console.error('Erro ao obter os logins:', error);
       }
     );
   }
 
-  updateUser() {
-    this.apiService.updateUser(this.loginId, this.login).subscribe(
-      (response) => {
-        console.log('Usuário atualizado com sucesso!', response);
+  carregarLogins() {
+    this.apiService.getLogin().subscribe(
+      (response: any) => {
+        this.logins = response; // Atualize a lista de logins com a resposta do serviço
       },
-      (error) => {
-        console.error('Erro ao atualizar o usuário:', error);
+      (error: any) => {
+        console.error('Erro ao carregar logins:', error);
       }
     );
   }
 
-  deleteUser() {
-    this.apiService.deleteUser(this.loginId).subscribe(
+  ionViewWillEnter() {
+    this.carregarLogins();
+  }
+
+  updateLogin(loginId: number, newData: any) {
+    this.apiService.updateLogin(loginId, newData).subscribe(
       (response) => {
-        console.log('Usuário deletado com sucesso!', response);
+        console.log('Login atualizado com sucesso!', response);
+        this.getAllLogins(); // Atualiza a lista após a edição
       },
       (error) => {
-        console.error('Erro ao deletar o usuário:', error);
+        console.error('Erro ao atualizar o login:', error);
       }
     );
+  }
+
+  excluirLogin(login: Login) {
+    this.apiService.excluirLogin(login.id).subscribe(
+      () => {
+        console.log(`Login com ID ${login.id} excluído com sucesso`);
+        this.carregarLogins(); // Atualize a lista após a exclusão
+        this.cancelar();
+      },
+      (error) => {
+        console.error('Erro ao excluir login:', error);
+      }
+    );
+  }
+
+  editarLogin(login: any) {
+    this.loginEdit = { ...login };
+    console.log(this.loginEdit);
+    const element = this.elementRef.nativeElement.querySelector('#listEdit');
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  cancelar() {
+    this.loginEdit = null;
+  }
+
+  salvarEdicao() {
+    this.apiService.atualizarLogin(this.loginEdit.id, this.loginEdit).subscribe(
+      (response) => {
+        console.log('Login atualizado com sucesso:', response);
+        this.carregarLogins(); 
+        this.cancelar();
+      },
+      (error) => {
+        console.error('Erro ao atualizar login:', error);
+      }
+    );
+  }
+
+  getAdmClass(adm: boolean | string) {
+    if (typeof adm === 'boolean') {
+      return adm ? 'isTrue' : 'isFalse';
+    } else {
+      return adm === 'true' ? 'isTrue' : 'isFalse';
+    }
   }
 }

@@ -1,29 +1,46 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Edit User</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label>ID: {{ login.id }}</ion-label>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Username</ion-label>
-    <ion-input [(ngModel)]="login.username"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Password</ion-label>
-    <ion-input type="password" [(ngModel)]="login.password"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Admin</ion-label>
-    <ion-checkbox [(ngModel)]="login.adm"></ion-checkbox>
-  </ion-item>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let login of logins">
 
-  <ion-button class="half-half-button n1" fill="clear" expand="block" (click)="updateUser()">Save Changes</ion-button>
-  <ion-button class="half-half-button n2" fill="clear" expand="block" (click)="deleteUser()">Delete User</ion-button>
+      <ion-label id="idame">ID: {{ login.id }}</ion-label>
+      <ion-label>Username: {{ login.username }}</ion-label>
+      <ion-label [ngClass]="getAdmClass(login.adm)">Adm: {{ login.adm }}</ion-label>
+      <ion-label id="idazul">Password: {{ maskPassword(login.password) }}</ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="editarLogin(login)">Editar</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list id="listEdit" *ngIf="loginEdit">
+    <ion-item>
+      <ion-label position='floating'>Nome de Usuário</ion-label>
+      <ion-input type='text' [(ngModel)]="loginEdit.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Admin</ion-label>
+      <ion-checkbox [(ngModel)]="loginEdit.adm"></ion-checkbox>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position='floating'>Senha</ion-label>
+      <ion-input type='password' [(ngModel)]="loginEdit.password"></ion-input>
+    </ion-item>
+    <ion-button   class="half-half-button edit" fill="clear" expand="full" (click)="salvarEdicao()">Salvar</ion-button>
+
+ <ion-button  class="half-half-button edit delete" fill="clear" expand="full" (click)="excluirLogin(loginEdit)">Deletar</ion-button>
+    <ion-button  class="half-half-button edit" fill="clear" expand="full" (click)="cancelar()">Cancelar</ion-button>
+  </ion-list>
+
+  <ion-button class="half-half-button edit back" fill="clear" expand="full" routerLink="/administartor">Voltar</ion-button>
 </ion-content>

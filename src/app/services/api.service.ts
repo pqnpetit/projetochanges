@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiService {
   private apiUrl = 'http://localhost:3000/login'; // Altere para o URL correto do seu backend
   private loginUrl = 'http://localhost:3000/login';
+  private Url = 'http://localhost:3000';
   private products = new BehaviorSubject<any[]>([]);
   enableNotifications: boolean = false;
   selectedLanguage: string = 'en';
@@ -57,25 +58,34 @@ export class ApiService {
   }
 
   updateLogin(loginId: number, newData: any) {
-    return this.http.put<any>(`${this.apiUrl}${loginId}`, newData);
+    return this.http.put<any>(`${this.apiUrl}/${loginId}`, newData); // Correção da concatenação do loginId
   }
-
+  
   deleteLogin(loginId: number) {
     return this.http.delete<any>(`${this.apiUrl}${loginId}`);
   }
 
-  getUserById(userId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${userId}`);
-  }
+  
+getLogin(): Observable<any> {
+  return this.http.get(this.apiUrl);
+}
 
-  updateUser(userId: number, userData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${userId}`, userData);
-  }
+atualizarLogin(id: number, login: any): Observable<any> {
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.put(url, login);
+}
 
-  deleteUser(userId: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}${userId}`);
-  }
 
+excluirLogin(id: number): Observable<any> {
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.delete(url);
+}
+
+
+
+getPosts(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.Url}/posts`);
+}
 
 }
   

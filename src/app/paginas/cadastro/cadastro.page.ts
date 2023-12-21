@@ -7,6 +7,10 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage {
+  hideTabs: boolean = true;
+  // Restante do código...
+
+
   login: any = {
     username: '',
     adm: false,

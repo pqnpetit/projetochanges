@@ -67,16 +67,30 @@
       "id": 24
     },
     {
-      "username": "petizn",
-      "adm": false,
-      "password": "1234",
+      "username": "lava",
+      "adm": true,
+      "password": "2121",
       "id": 25
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "Título do Post 1",
+      "descricao": "Descrição do Post 1",
+      "imagemUrl": "link_para_imagem_1.jpg"
     },
     {
-      "username": "alo",
-      "adm": false,
-      "password": "1234",
-      "id": 26
+      "id": 2,
+      "titulo": "Título do Post 2",
+      "descricao": "Descrição do Post 2",
+      "imagemUrl": "link_para_imagem_2.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Título do Post 3",
+      "descricao": "Descrição do Post 3",
+      "imagemUrl": "link_para_imagem_3.jpg"
     }
   ]
 }

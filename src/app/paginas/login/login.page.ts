@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -9,27 +10,36 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  hideTabs: boolean = true;
+  // Restante do código...
+
+  
   username = '';
   password = '';
   usuarioLogado = false;
   adm = true;
+  errorMessage = ''; // Adicionando variável para armazenar mensagem de erro
 
   constructor(
     private http: HttpClient,
     private router: Router,
     public nav: NavController,
-    private navCtrl: NavController
+    private navCtrl: NavController ,private apiService : ApiService
   ) {}
 
   ngOnInit() {}
 
+
   verificarAutenticacao() {
-    // Verifique o armazenamento local ou estado do aplicativo para verificar se o usuário está autenticado
-    // Define usuarioLogado como true se estiver autenticado
     this.usuarioLogado = true;
   }
 
   login() {
+    if (this.username.trim() === '' || this.password.trim() === '') {
+      this.errorMessage = 'Por favor, preencha todos os campos.';
+      return; // Impede a continuação do processo se os campos estiverem vazios
+    }
+
     this.http.get<any[]>('http://localhost:3000/login', { observe: 'response' }).subscribe(
       (response) => {
         const users = response.body;
@@ -37,26 +47,16 @@ export class LoginPage implements OnInit {
           const user = users.find((u) => u.username === this.username && u.password === this.password);
           if (user) {
             if (user.adm === true) {
-              // Redirecionar para a página de administrador se o usuário for um administrador
               this.router.navigate(['/administrator']);
             } else {
-              // Se o usuário não tiver permissão de administrador, redirecionar para a página home
               this.router.navigate(['/home']);
             }
-          } else {
-            // Login bem-sucedido
-            console.log('Login bem-sucedido!');
-            this.username = '';
-            this.password = '';
-            this.router.navigate(['/home']); // onde está home será a pagina aberta apos o login
           }
         } else {
-          // Lidar com o caso em que users é null
           console.log('Não foi possível obter a lista de usuários.');
         }
       },
       (error) => {
-        // Lidar com erros de requisição HTTP
         console.error('Erro na requisição HTTP:', error);
       }
     );
