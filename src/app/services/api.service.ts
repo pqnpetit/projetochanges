@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-
+import { LojaPage, Product } from '../paginas/loja/loja.page';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class ApiService {
   private apiUrl = 'http://localhost:3000/login'; // Altere para o URL correto do seu backend
   private loginUrl = 'http://localhost:3000/login';
   private Url = 'http://localhost:3000';
+  private prodUrl = 'http://localhost:3000/products';
   private products = new BehaviorSubject<any[]>([]);
   enableNotifications: boolean = false;
   selectedLanguage: string = 'en';
@@ -38,9 +39,6 @@ export class ApiService {
     }
   // Adicione outras operações CRUD ou métodos necessários aqui
 
-  getProducts() {
-    return this.products.asObservable();
-  }
 
   loadProductsFromBackend() {
     this.http.get<any[]>(`${this.apiUrl}/products`).subscribe(
@@ -94,6 +92,9 @@ getLoginPorUsername(username: string): Observable<any> {
   return this.http.get<any[]>(`${this.Url}/login?username=${username}`);
 }
 
+getProducts(): Observable<Product[]> {
+  return this.http.get<Product[]>(this.prodUrl);
+}
 
 }
   

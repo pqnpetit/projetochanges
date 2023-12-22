@@ -20,8 +20,8 @@
     },
     {
       "id": 4,
-      "adm": false,
       "username": "superior",
+      "adm": false,
       "password": "123"
     },
     {
@@ -31,32 +31,53 @@
       "password": "petit"
     },
     {
-      "id": 6,
-      "adm": false,
-      "username": "lindao",
-      "password": "1234"
-    },
-    {
-      "id": 7,
-      "adm": false,
-      "username": "cabaço",
-      "password": "1234"
-    },
-    {
-      "id": 8,
-      "adm": false,
       "username": "patrick",
-      "password": "1234"
+      "adm": false,
+      "password": "1234",
+      "id": 6
     },
     {
-      "id": 9,
+      "username": "bruno",
       "adm": false,
-      "email": "lalalala@gmail.com",
-      "birthday": "2002-05-09",
-      "username": "lalalala",
-      "password": "1234"
+      "password": "1234",
+      "id": 7
+    },
+    {
+      "username": "brunaozao",
+      "adm": false,
+      "password": "1234",
+      "id": 12
+    },
+    {
+      "username": "gabrielzao",
+      "adm": false,
+      "password": "1234",
+      "id": 13
+    },
+    {
+      "username": "petitzin",
+      "adm": false,
+      "password": "1234",
+      "id": 23
+    },
+    {
+      "username": "petitzinzao",
+      "adm": false,
+      "password": "1234",
+      "id": 24
+    },
+    {
+      "username": "petizn",
+      "adm": true,
+      "password": "1234",
+      "id": 25
+    },
+    {
+      "username": "narutinhao",
+      "adm": "true",
+      "password": "123",
+      "id": 28
     }
-    
   ],
   "posts": [
     {
@@ -77,5 +98,26 @@
       "descricao": "Descrição do Post 3",
       "imagemUrl": "link_para_imagem_3.jpg"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Creatina (Creapure®) 250g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/1-Creatina-Creapure-1.png"
+    },
+    {
+      "id": 2,
+      "title": "L-Glutamina 250g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "link_para_imagem_2.png"
+    },
+    {
+      "id": 3,
+      "title": "Whey Protein Concentrado Garrafinha 30g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "link_para_imagem_3.png"
+    }
+   
   ]
 }
