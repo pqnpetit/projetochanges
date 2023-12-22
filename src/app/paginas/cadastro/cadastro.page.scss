@@ -10,14 +10,35 @@ ion-content {
     background-position-y: top;
   }
 
-  .um{
+  ion-label {
+    text-align: start;
+  }
+
+  .date{
+    text-align: start;
+    background-color: transparent;
+  }
+
+  .one{
     background-color: transparent;
     margin-top: 60%;
     width: 90%;
     margin-left: 3%;
   }
 
-  .dois{
+  .two{
+    background-color: transparent;
+    width: 90%;
+    margin-left: 3%;
+  }
+
+  .three{
+    background-color: transparent;
+    width: 90%;
+    margin-left: 3%;
+  }
+
+  .four{
     background-color: transparent;
     width: 90%;
     margin-left: 3%;

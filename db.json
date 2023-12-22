@@ -47,7 +47,16 @@
       "adm": false,
       "username": "patrick",
       "password": "1234"
+    },
+    {
+      "id": 9,
+      "adm": false,
+      "email": "lalalala@gmail.com",
+      "birthday": "2002-05-09",
+      "username": "lalalala",
+      "password": "1234"
     }
+    
   ],
   "posts": [
     {

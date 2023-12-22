@@ -14,6 +14,8 @@ export class CadastroPage {
   login: any = {
     id: '',
     adm: false,
+    email: '',
+    birthday:'',
     username: '',
     password: ''
   };
@@ -36,6 +38,8 @@ export class CadastroPage {
     this.login = {
       id:'',
       adm: false,
+      email: '',
+      birthday:'',
       username: '',
       password: ''
     };
