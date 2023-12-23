@@ -14,18 +14,22 @@
     <ion-input type="text" [(ngModel)]="login.name"></ion-input>
   </ion-item>
   <ion-item class="two" color="translucent"> 
+    <ion-label class="loginsenha" position="floating">Sobrenome</ion-label>
+    <ion-input type="text" [(ngModel)]="login.lastname"></ion-input>
+  </ion-item>
+  <ion-item class="three" color="translucent"> 
     <ion-label class="loginsenha" position="floating">Nome de Usuário</ion-label>
     <ion-input type="text" [(ngModel)]="login.username"></ion-input>
   </ion-item>
-  <ion-item class="three" color="translucent"> 
+  <ion-item class="four" color="translucent"> 
     <ion-label class="loginsenha" position="floating">Email</ion-label>
     <ion-input type="email" [(ngModel)]="login.email"></ion-input>
   </ion-item>
-  <ion-item class="four" color="translucent"> 
+  <ion-item class="five" color="translucent"> 
     <ion-label class="loginsenha" position="floating"></ion-label>
     <ion-input type="date" class="date" [(ngModel)]="login.birthday"></ion-input>
   </ion-item>
-  <ion-item class="five" color="info">
+  <ion-item class="six" color="info">
     <ion-label class="loginsenha" position="floating">Senha</ion-label>
     <ion-input type="password" [(ngModel)]="login.password"></ion-input>
   </ion-item>

@@ -90,7 +90,26 @@
       "birthday": "2003-06-11",
       "username": "lolo",
       "password": "111"
+    },
+    {
+      "id": 28,
+      "adm": false,
+      "email": "gabrielpetit123@gmail.com",
+      "birthday": "2002-05-09",
+      "name": "Gabriel",
+      "username": "pqnpetitao",
+      "password": "lalalala1234"
+    },
+    {
+      "id": 29,
+      "adm": false,
+      "email": "gabrielpetit12@gmail.com",
+      "birthday": "2002-05-09",
+      "name": "Gabrielzinhoooo",
+      "username": "pqnpetitzinzin",
+      "password": "lalalala1234"
     }
+    
   ],
   "posts": [
     {
