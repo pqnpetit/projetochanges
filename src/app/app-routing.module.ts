@@ -4,12 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', // Redireciona para a página de login
+    redirectTo: 'loading', // Redireciona para a página de login
     pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'login',
@@ -17,6 +13,10 @@ const routes: Routes = [
     data: {
       hideTabs: true // Identificador para ocultar os tabs nesta página
     }
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'cadastro',
@@ -45,6 +45,18 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./paginas/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'loading',
+    loadChildren: () => import('./paginas/loading/loading.module').then( m => m.LoadingPageModule)
+  },
+  {
+    path: 'editloja',
+    loadChildren: () => import('./paginas/editloja/editloja.module').then( m => m.EditlojaPageModule)
+  },
+  {
+    path: 'detalhes-compra',
+    loadChildren: () => import('./paginas/detalhes-compra/detalhes-compra.module').then( m => m.DetalhesCompraPageModule)
   }
 ];
 

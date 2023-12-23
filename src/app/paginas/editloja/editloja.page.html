@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editar Loja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+
+      <ion-label id="idame">ID: {{ product.id }}</ion-label>
+      <ion-label>Título: {{ product.title }}</ion-label>
+      <ion-label>Subtítulo: {{ product.subtitle }}</ion-label>
+      <ion-img [src]="product.image" alt="Imagem do produto"></ion-img>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="editarProduto(product)">Editar</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <!-- Formulário para editar produto -->
+  <ion-list id="listEdit" *ngIf="productEdit">
+    <!-- Aqui você terá os campos para editar o produto -->
+    <ion-item>
+      <ion-label position='floating'>Título</ion-label>
+      <ion-input type='text' [(ngModel)]="productEdit.title"></ion-input>
+    </ion-item>
+    <!-- Outros campos de edição conforme necessário -->
+
+    <!-- Botões para salvar, excluir e cancelar -->
+    <ion-button class="half-half-button edit" fill="clear" expand="full" (click)="salvarEdicao()">Salvar</ion-button>
+    <ion-button class="half-half-button edit delete" fill="clear" expand="full" (click)="excluirProduto(productEdit)">Deletar</ion-button>
+    <ion-button class="half-half-button edit" fill="clear" expand="full" (click)="cancelar()">Cancelar</ion-button>
+  </ion-list>
+
+ 

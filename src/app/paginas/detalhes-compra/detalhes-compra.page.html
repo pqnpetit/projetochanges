@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhes da Compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Marca do Cartão</ion-label>
+      <ion-select placeholder="Selecione a marca" [(ngModel)]="marcaCartao">
+        <ion-select-option value="Visa">Visa</ion-select-option>
+        <ion-select-option value="MasterCard">MasterCard</ion-select-option>
+        <ion-select-option value="HiperCard">HiperCard</ion-select-option>
+        <ion-select-option value="Alelo">Alelo</ion-select-option>
+        <ion-select-option value="American Express">American Express</ion-select-option>
+        <!-- Adicione outras marcas, se necessário -->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome no Cartão</ion-label>
+      <ion-input type="text" [(ngModel)]="nomeCartao" (input)="validateCardHolderName($event)"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Número do Cartão</ion-label>
+      <ion-input type="number" [(ngModel)]="numeroCartao" (input)="validateCardNumber($event)"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label position="floating">CPF</ion-label>
+      <ion-input type="number" [(ngModel)]="cpf" (input)="validateCPF($event)"></ion-input>
+    </ion-item>
+    <!-- Outros campos para as informações de compra, se necessário -->
+  </ion-list>
+
+  <ion-button expand="full" (click)="finalizarCompra()">Finalizar Compra</ion-button>
+</ion-content>

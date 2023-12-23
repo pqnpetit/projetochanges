@@ -7,7 +7,7 @@ import { Router , NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   showTabs: boolean = false;
-  hideTabsOnPages: string[] = ['/login', '/cadastro', '/administrator' , '/edit']; // Páginas sem os tabs
+  hideTabsOnPages: string[] = ['/login', '/cadastro', '/administrator' , '/edit','/loading']; // Páginas sem os tabs
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {

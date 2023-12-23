@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="dark" routerLink="/configuracao">
+        <ion-icon slot="icon-only" ios="settings-outline" md="settings-sharp" routerLink="/configuracao"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card *ngIf="login">
+    <img [src]="login.profileImage" alt="Imagem de Perfil">
+    <ion-card-header>
+      <ion-card-title>{{ login.username }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>ID: {{ login.id }}</p>
+      <p>Nome: {{ login.name }}</p>
+      <p>Email: {{ login.email }}</p>
+      <p>Senha: {{ login.password }}</p>
+      <!-- Outras informações do perfil conforme necessário -->
+    </ion-card-content>
+  </ion-card>
 </ion-content>

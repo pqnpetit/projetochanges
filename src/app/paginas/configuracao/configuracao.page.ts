@@ -16,10 +16,19 @@ export class ConfiguracaoPage implements OnInit {
   changeLanguage() {
 
   }
+
+  toggleDarkMode() {
+    this.apiService.toggleDarkMode();
+  }
   constructor(public apiService : ApiService,) {}
-  ngOnInit(): void {
+  themeToggle = false;
+
+  ngOnInit() {
+  
   
   }
+
+ 
 
   saveSettings() {
     console.log('Configurações salvas:', this.apiService.enableNotifications, this.apiService.selectedLanguage);

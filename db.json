@@ -2,7 +2,7 @@
   "login": [
     {
       "id": 1,
-      "adm": false,
+      "adm": true,
       "username": "admin",
       "password": "123456"
     },
@@ -10,19 +10,14 @@
       "id": 2,
       "adm": false,
       "username": "bb",
-      "password": "111"
+      "password": "111",
+      "profileImage": "../../../assets/1-Creatina-Creapure-1.png"
     },
     {
       "id": 3,
       "adm": true,
       "username": "superior",
       "password": "topsecret"
-    },
-    {
-      "id": 4,
-      "username": "superior",
-      "adm": false,
-      "password": "123"
     },
     {
       "id": 5,
@@ -61,22 +56,40 @@
       "id": 23
     },
     {
-      "username": "petitzinzao",
-      "adm": false,
-      "password": "1234",
-      "id": 24
-    },
-    {
       "username": "petizn",
-      "adm": true,
+      "adm": false,
       "password": "1234",
       "id": 25
     },
     {
-      "username": "narutinhao",
-      "adm": "true",
+      "id": 26,
+      "adm": false,
+      "email": "nnn@gmail.com",
+      "birthday": "2004-01-18",
+      "username": "nnn",
       "password": "123",
-      "id": 28
+      "compras": [
+        {
+          "produto": {
+            "id": 1,
+            "title": "Creatina (Creapure®) 250g – Smart Fit Supps",
+            "subtitle": "Produtos Smart Fit",
+            "image": "../../../assets/1-Creatina-Creapure-1.png"
+          },
+          "nomeCartao": "",
+          "numeroCartao": "",
+          "cpf": "",
+          "marcaCartao": ""
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "adm": true,
+      "email": "lolo@gmail.com",
+      "birthday": "2003-06-11",
+      "username": "lolo",
+      "password": "111"
     }
   ],
   "posts": [
@@ -84,7 +97,7 @@
       "id": 1,
       "titulo": "Título do Post 1",
       "descricao": "Descrição do Post 1",
-      "imagemUrl": "link_para_imagem_1.jpg"
+      "imagemUrl": "../../../assets/1-Creatina-Creapure-1.png"
     },
     {
       "id": 2,
@@ -110,14 +123,55 @@
       "id": 2,
       "title": "L-Glutamina 250g – Smart Fit Supps",
       "subtitle": "Produtos Smart Fit",
-      "image": "link_para_imagem_2.png"
+      "image": "../../../assets/glutamina.png"
     },
     {
       "id": 3,
       "title": "Whey Protein Concentrado Garrafinha 30g – Smart Fit Supps",
       "subtitle": "Produtos Smart Fit",
-      "image": "link_para_imagem_3.png"
+      "image": "../../../assets/whey.webp"
+    },
+    {
+      "id": 4,
+      "title": "BCAA 2:1:1 Em Pó 200g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/bcaa.webp"
+    },
+    {
+      "id": 5,
+      "title": "Cafeína 200 – 60 Comprimidos – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/cafeina.webp"
+    },
+    {
+      "id": 6,
+      "title": "Whey Protein Isolado 900g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/isolado.webp"
+    },
+    {
+      "id": 7,
+      "title": "Smart Workout Beta 300g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/workout.webp"
+    },
+    {
+      "id": 8,
+      "title": "Camiseta Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/camiseta.webp"
+    },
+    {
+      "id": 9,
+      "title": "Smart Bar (Barrinha de Proteína) 40g - Smart Fit  Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/barra.png"
+    },
+    {
+      "id": 10,
+      "title": "Creatina Monohidratada 250g – Smart Fit Supps",
+      "subtitle": "Produtos Smart Fit",
+      "image": "../../../assets/Monohidrata.webp"
     }
-   
   ]
 }

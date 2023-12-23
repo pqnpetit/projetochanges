@@ -1,11 +1,35 @@
 <!-- config.page.html -->
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/profile"></ion-back-button>
+    </ion-buttons>
     <ion-title>Configurações</ion-title>
+    
+    <ion-buttons slot="end">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<ng-container *ngIf="(apiService.isDarkMode | async) as isDarkMode">
+  <ion-button (click)="toggleDarkMode()"> 
+    {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+  </ion-button>
+</ng-container>
 <ion-content>
+  
+  
+  
+
+  <ion-list [inset]="true">
+    <ion-item [button]="true">
+      <ion-label>Night Shift</ion-label>
+      <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+    </ion-item>
+  </ion-list>
   <!-- Aqui você pode adicionar opções de configuração, como toggles, inputs, selects, etc. -->
   <ion-list>
     <ion-item>
@@ -22,6 +46,9 @@
       </ion-select>
     </ion-item>
     
+    
+      <!-- Seu conteúdo aqui -->
+    <!-- Seu HTML relevante -->
     
 
     <!-- Adicione mais opções de configuração conforme necessário -->

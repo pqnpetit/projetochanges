@@ -1,15 +1,55 @@
+// Seu arquivo .scss
 
-span{
+.custom-toast {
+ 
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+  
+}
 
-  text-align: center;
-  margin-top: 5%;
+.half-half-button {
+  background: linear-gradient(-223deg, #006cff 35%, #ff9300 65%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom-left-radius: 30%;
+  border-top-right-radius: 30%;
+  width: 86%;
+  margin-left: 7%;
+  
 }
 
 
+.half-half-button.n1 {
+  margin-top: 5%;
+}
 
+.half-half-button.n2 {
+  margin-top: 3%;
+  background: linear-gradient(-223deg, #ff9300 35%, #006cff 65%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom-left-radius: 30%;
+  border-top-right-radius: 30%;
+  width: 86%;
+  margin-left: 7%;
+}
 
-
-
+.toast-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+  z-index: 1000; /* Z-index alto para estar acima de tudo */
+  pointer-events: none; /* Ignora eventos de clique no overlay */
+}
 
 
 

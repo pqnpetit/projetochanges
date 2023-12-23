@@ -1,0 +1,30 @@
+.loading-container {
+    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-container img {
+    position: fixed;
+    width: 150%;
+    height: 100%;
+    animation: zoomAnimation 10s infinite linear; /* Animação de zoom constante */
+    overflow: hidden; /* Garante que a imagem não ultrapasse a tela */
+
+    object-fit: cover; /* Garante que a imagem preencha o espaço mantendo sua proporção */
+  }
+
+  @keyframes zoomAnimation {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.05); /* Pequeno zoom de 2% */
+    }
+    100% {
+      transform: scale(1); /* Volta ao tamanho normal */
+    }
+  }
+  
+  
