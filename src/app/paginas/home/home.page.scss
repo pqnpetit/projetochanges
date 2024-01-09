@@ -1,23 +1,115 @@
 /* Estilização para a página Home */
 *{
-    --ion-background-color: black;
+ 
+  
 }
+
+
+
 ion-header {
     ion-toolbar {
       ion-title {
         font-size: 24px;
         font-weight: bold;
+        
       }
     }
   }
   
   ion-content {
-    ion-list {
-      ion-item {
+    
+    ion-list {   
+     ion-item { 
+
         font-size: 16px;
         padding: 12px;
         border-bottom: 1px solid #ccc;
+
       }
     }
   }
+
+  p{
+    color: white;
+    text-align: center;
+  }
+  
+  .post-grid {
+    --ion-grid-column-padding: 8px; /* Espaçamento entre as colunas */
+  }
+  
+  .compressed-image {
+    width: 100%; /* Define a largura da imagem */
+    height: 100%; /* Define a altura da imagem */
+    object-fit: cover; /* Redimensiona a imagem para preencher o espaço mantendo a proporção */
+    border-radius: 8px; /* Adiciona cantos arredondados às imagens */
+  }
+
+  #comen{
+margin-left: 25%;
+  }
+  
+  #but{
+    margin-left: 35%;
+  }
+
+  .profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  margin-bottom: 2%;
+  width: 50px; /* Tamanho da foto de perfil */
+  height: 50px; /* Tamanho da foto de perfil */
+  border-radius: 50%; /* Formato de bolinha */
+  overflow: hidden;
+  margin-right: 10px; /* Espaço entre a foto e o nome de usuário */
+  border: 2px solid #fff; /* Cor da borda */
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  flex: 1; /* Ocupa o restante do espaço disponível */
+}
+
+.username {
+  margin: 0; /* Remover margem padrão */
+  font-weight: bold; /* Estilo para o nome de usuário, se desejado */
+  margin-right: 70%;
+}
+
+.full-width-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center
+}
+
+.notification-icon {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
   

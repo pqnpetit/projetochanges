@@ -1,5 +1,7 @@
 ion-menu {
-  --ion-background-color: black; /* Define o fundo como preto */
+  
+  
+  --ion-background-color: rgba(0, 0, 0, 0.151); /* Define o fundo como preto */
 }
 
 ion-menu ion-label {
@@ -16,3 +18,17 @@ ion-tab-button ion-icon {
 ion-tab-button:active ion-icon {
   transform: scale(1.2);
 }
+/* Arquivo de estilo ou no seu CSS */
+/* CSS adicional para estilização */
+.menu-content {
+  --background: rgba(0, 0, 0, 0.9); /* Define a cor de fundo do menu */
+  border: 2px groove #ffffff
+}
+
+.social {
+  background-color: #000000; /* Cor de fundo para a seção de ícones de redes sociais */
+  
+}
+
+
+

@@ -13,17 +13,48 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="login">
-    <img [src]="login.profileImage" alt="Imagem de Perfil">
-    <ion-card-header>
-      <ion-card-title>{{ login.username }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>ID: {{ login.id }}</p>
-      <p>Nome: {{ login.name }}</p>
-      <p>Email: {{ login.email }}</p>
-      <p>Senha: {{ login.password }}</p>
-      <!-- Outras informações do perfil conforme necessário -->
-    </ion-card-content>
-  </ion-card>
+
+  <ion-grid>
+    <!-- Profile -->
+    <ion-row>
+      <ion-col>
+        <div class="profile__image">
+          <img src="../../../assets/brunin.png">
+        </div>
+        <div class="ion-text-center">
+          <h4>Bruno Gelpke</h4>
+          <p>Buscando melhorar em todos os aspectos</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Stats -->
+    <ion-row class="stats">
+      <ion-col>
+        <h6>356</h6>
+        <p>Photos</p>
+      </ion-col>
+      <ion-col>
+        <h6>860</h6>
+        <p>Friends</p>
+      </ion-col>
+      <ion-col>
+        <h6>20</h6>
+        <p>Groups</p>
+      </ion-col>
+    </ion-row>
+<!-- Fora do loop das imagens -->
+
+  <div class="full-screen-view" *ngIf="isImageExpanded" (click)="closeExpandedImage()">
+    <ion-img [src]="expandedImageUrl" class="expanded-image"></ion-img>
+  </div>
+
+     <!-- Grid -->
+  <ion-row>
+    <ion-col size="4" *ngFor="let item of friends">
+      <ion-img [src]="item.feed_image" (click)="expandImage(item.feed_image)"></ion-img>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+
 </ion-content>

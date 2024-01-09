@@ -1,15 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+  <ion-toolbar style="--s: 200px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+    background:
+      repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 180deg) calc(.5 * var(--s)) calc(.5 * var(--s) * 0.577),
+      repeating-conic-gradient(from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 180deg);
+    background-size: var(--s) calc(var(--s) * 0.577);">
+    <ion-buttons style="" slot="start">
+      <ion-menu-button ></ion-menu-button>
     </ion-buttons>
-    <ion-title>Produtos</ion-title>
+    <ion-title style="background-color: black;">Produtos</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
   <ion-card *ngFor="let product of products">
-    <img [src]="product.image" alt="Imagem do Produto" style="margin-left: 80px; width:200px; height: 200px;">
+    <img [src]="product.image" alt="Imagem do Produto" style="margin-left: 80px; width:200px; height: 200px; background-color: rgba(0, 0, 0, 0);">
     <ion-card-header>
       <ion-card-title>{{ product.title }}</ion-card-title>
       <ion-card-subtitle>{{ product.subtitle }}</ion-card-subtitle>

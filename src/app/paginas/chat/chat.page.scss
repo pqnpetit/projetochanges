@@ -1,0 +1,84 @@
+/* Estilo para o cabeçalho */
+
+*{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+ion-toolbar {
+  --ion-background-color: #ffffff; /* Cor de fundo do cabeçalho */
+  --ion-color-base: #333333; /* Cor base para texto */
+}
+
+ion-item ion-avatar img {
+  width: 40px; /* Largura da imagem do avatar */
+  height: 40px; /* Altura da imagem do avatar */
+  border-radius: 50%; /* Formato circular para a imagem */
+}
+
+ion-item ion-label {
+  margin-left: 10px; /* Espaçamento entre o avatar e o texto */
+}
+
+h3 {
+  margin: 0; /* Remove margem padrão para o título */
+  font-size: 1.2em; /* Tamanho da fonte para o título */
+}
+
+p {
+  margin: 0; /* Remove margem padrão para os parágrafos */
+  font-size: 0.8em; /* Tamanho da fonte para os parágrafos */
+  color: #666666; /* Cor do texto para os parágrafos */
+}
+
+/* Estilo para as bolhas de mensagem */
+.chat-bubble {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 20px;
+  max-width: 70%;
+}
+
+.left {
+  background-color: #eca304; /* Cor de fundo para as mensagens do outro usuário */
+  float: left;
+}
+
+.right {
+  margin-top: 10%;
+  background-color: #007bff; /* Cor de fundo para suas próprias mensagens */
+  float: right;
+  color: #ffffff; /* Cor do texto para suas próprias mensagens */
+}
+
+/* Estilo para o rodapé */
+ion-footer {
+  --ion-background-color: #ffffff; /* Cor de fundo para o rodapé */
+  --ion-border-color: transparent; /* Cor da borda */
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+ion-button {
+  --border-width: 0; /* Remove a borda dos botões */
+}
+
+ion-textarea {
+  flex: 1; /* Ocupa o espaço restante */
+  margin: 0 10px; /* Espaçamento entre os botões e a área de texto */
+}
+
+.message{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.time {
+  background-color: rgba(0, 0, 0, 0.2); /* Altere a cor e a opacidade conforme necessário */
+  padding: 5px 10px; /* Ajuste o espaçamento interno conforme necessário */
+  border-radius: 10px; /* Adicione bordas arredondadas, se preferir */
+  /* Outros estilos conforme desejado */
+}
+

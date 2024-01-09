@@ -8,7 +8,6 @@
 </ion-header>
 
 
-
 <ion-content [fullscreen]="true" class="content">
   <div class="container">
     <ion-item>
@@ -17,13 +16,18 @@
     </ion-item>
     <ion-card *ngIf="login" class="card">
       <ion-card-header>
-        Informações do Login
+        Informações do Usuário
       </ion-card-header>
       <ion-card-content>
         <ion-label>ID: {{ login.id }}</ion-label><br>
-        <ion-label>Usuário: {{ login.username }}</ion-label>
-        <!-- Outras informações do login -->
+        <ion-label>Usuário: {{ login.username }}</ion-label><br>
+        <ion-label>Foto de Perfil: <br></ion-label>
+        <img [src]="login?.profileImage" *ngIf="login?.profileImage" >
+        
+        
+      
       </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
+

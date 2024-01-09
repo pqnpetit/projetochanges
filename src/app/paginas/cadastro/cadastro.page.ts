@@ -28,7 +28,17 @@ export class CadastroPage {
   cadastrar() {
     const usernamePattern = /^[^\d\s@]+$/; // Expressão regular para não permitir números no nome de usuário
     const currentYear = new Date().getFullYear(); // Obtém o ano atual
-  
+    const dataNascimento = new Date(this.login.birthday);
+  const hoje = new Date();
+  const idade = hoje.getFullYear() - dataNascimento.getFullYear();
+
+  if (idade < 16) {
+    // Se a idade for menor que 18, exibir uma mensagem ou tomar alguma ação adequada
+    // Por exemplo:
+    console.log("Você precisa ter pelo menos 16 anos para se cadastrar.");
+    return; // Impede o cadastro
+  }
+
     if (
       this.login.username &&
       this.login.email &&
@@ -72,6 +82,8 @@ export class CadastroPage {
       // Por exemplo: this.showToast('Preencha os campos corretamente e insira um ano válido.');
     }
   }
+
+  
 
   limparFormulario() {
     this.login = {

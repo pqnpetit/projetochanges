@@ -1,22 +1,52 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="dark" routerLink="/notification">
+        <ion-icon slot="icon-only" ios="notifications" md="settings-sharp" routerLink="/notification" class="notification-icon"></ion-icon>
+        <div class="notification-badge"></div>
+      </ion-button>
+    </ion-buttons>
+    
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let post of posts">
-      <ion-thumbnail slot="start">
-        <img [src]="post.imagemUrl" alt="Imagem do post">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ post.titulo }}</h2>
-        <p>{{ post.descricao }}</p>
-      </ion-label>
-    </ion-item>
+  <ion-list class="ion-no-padding">
+    <ion-card *ngFor="let friend of friends">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{friend.avatar}}">
+        </ion-avatar>
+        <ion-label>
+          <h3>{{friend.name}}</h3>
+        </ion-label>
+        <ion-note slot="end">
+          <ion-label>{{friend.last_message.time}}</ion-label>
+        </ion-note>
+      </ion-item>
+      <img src="{{friend.feed_image}}" [alt]="friend?.name">
+
+      <!-- Botões de curtir e comentar -->
+      <ion-card-footer>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="likeFriend(friend)">
+              <ion-icon name="thumbs-up" *ngIf="!friend.liked"></ion-icon>
+              <ion-icon name="thumbs-up-outline" *ngIf="friend.liked"></ion-icon>
+              {{ friend.likes }} Likes
+            </ion-button>
+          
+            <ion-button (click)="openCommentBox(friend)">
+              <ion-icon name="chatbox"></ion-icon>
+              {{ friend.comments }} Comments
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-footer>
+    </ion-card>
   </ion-list>
 </ion-content>

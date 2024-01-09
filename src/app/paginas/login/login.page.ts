@@ -37,7 +37,9 @@ export class LoginPage implements OnInit {
   login() {
     if (this.username.trim() === '' || this.password.trim() === '') {
       this.errorMessage = 'Por favor, preencha todos os campos.';
+      this.apiService.loginUser(this.username, this.password);
       return; // Impede a continuação do processo se os campos estiverem vazios
+
     }
 
     this.http.get<any[]>('http://localhost:3000/login', { observe: 'response' }).subscribe(

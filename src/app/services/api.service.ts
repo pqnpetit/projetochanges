@@ -8,17 +8,22 @@ import { LojaPage, Product } from '../paginas/loja/loja.page';
   providedIn: 'root'
 })
 export class ApiService {
+  
   getCurrentUser() {
     throw new Error('Method not implemented.');
   }
   getUserProfile(loginId: number) {
     throw new Error('Method not implemented.');
   }
+  private loggedInUser: any = null;
 
   private apiUrl = 'http://localhost:3000/login'; // Altere para o URL correto do seu backend
   private loginUrl = 'http://localhost:3000/login';
   private Url = 'http://localhost:3000';
+  private photoUrl = 'http://localhost:3000';
   private prodUrl = 'http://localhost:3000/products';
+  private postsUrl = 'http://localhost:3000/posts';
+
   private products = new BehaviorSubject<any[]>([]);
   enableNotifications: boolean = false;
   selectedLanguage: string = 'en';
@@ -58,7 +63,10 @@ export class ApiService {
     this.currentUserSubject.next(null);
   }
 
-
+  getUserDetails(): Observable<any> {
+    // Suponha que a API retorne os detalhes do usuário através dessa rota
+    return this.http.get<any>(`${this.apiUrl}/user-details`);
+  }
 
 
   cadastrarUsuario(usuario: any): Observable<any> {
@@ -123,9 +131,7 @@ excluirLogin(id: number): Observable<any> {
 
 
 
-getPosts(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.Url}/posts`);
-}
+
 
 
 
@@ -184,7 +190,100 @@ authenticateUser(username: string, password: string): Observable<any> {
   });
 }
 
+  // Método para buscar posts
+  getPosts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.Url}/posts`);
+  }
+
+  // Método para adicionar um comentário a um post específico
+  adicionarComentario(postId: number, novoComentario: string): Observable<any> {
+    const comments = { postId, text: novoComentario };
+    return this.http.post<any>(`${this.apiUrl}/posts/${postId}/comments`, comments);
+  }
+
+  // Método para buscar comentários de um post específico
+  getComentariosDoPost(postId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/posts/${postId}/comments`);
+  }
+  getSampleData() {
+    let promise = new Promise((resolve, reject) => {
+      this.http.get(`${this.Url}`)
+          .toPromise()
+          .then(res => {
+              resolve(res);
+          }, error => {
+              reject(error);
+          });
+    });
+    return promise;
+  }
+
+  getFriends(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.Url}/friends`)
+        .toPromise()
+        .then(res => {
+          resolve(res); // ou res['friends'], se o retorno da API já fornecer essa estrutura
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
+  
+  getGroups(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.Url}/groups`)
+        .toPromise()
+        .then(res => {
+          resolve(res); // ou res['groups'], se o retorno da API já fornecer essa estrutura
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
+  
+  getLoggedUser(): any {
+    // Suponha que você tenha uma forma de recuperar os dados do usuário logado,
+    // seja a partir de um token, do armazenamento local (localStorage) ou de outro meio.
+    // Aqui, estamos apenas simulando um usuário logado para demonstração.
+
+    // Recupere os dados do usuário do localStorage ou de onde estiverem armazenados
+    const userDataString = localStorage.getItem('userData');
+    const userData = userDataString ? JSON.parse(userDataString) : null;
+
+    return userData; // Retorna os dados do usuário logado
+  }
+
+
+  // Método para realizar o login e armazenar os detalhes do usuário logado
+  loginUser(username: string, password: string): void {
+    // Lógica para autenticação
+    // Após autenticação bem-sucedida, armazene os detalhes do usuário logado
+    this.loggedInUser = {
+      username: username,
+      // Outros detalhes do usuário, se necessário
+    };
+
+    // Armazene os detalhes do usuário no localStorage para uso futuro
+    localStorage.setItem('loggedInUser', JSON.stringify(this.loggedInUser));
+  }
+
+  // Método para obter os detalhes do usuário logado
+  getLoggedInUser(): any {
+    return this.loggedInUser;
+  }
+
+  // Métodos para interagir com a API...
+  // Por exemplo, um método para enviar dados de curtidas para o backend
+  likeFriend(friendId: number) {
+    // Faça a chamada à API para atualizar as curtidas do amigo com ID friendId
+  }
 }
+
+
+
   
   
 

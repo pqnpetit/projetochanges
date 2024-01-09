@@ -7,15 +7,17 @@ import { Router , NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   showTabs: boolean = false;
-  hideTabsOnPages: string[] = ['/login', '/cadastro', '/administrator' , '/edit','/loading']; // Páginas sem os tabs
-
+  hideTabsOnPages: string[] = ['/login', '/cadastro', '/administrator', '/edit', '/loading']; // Páginas sem os tabs
+  
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentPage = this.router.url; // Obtém a URL atual
-        this.showTabs = !this.hideTabsOnPages.some(page => currentPage.includes(page));
+  
+        // Verifica se a URL atual corresponde exatamente a uma das páginas da lista hideTabsOnPages
+        this.showTabs = !this.hideTabsOnPages.some(page => currentPage.endsWith(page));
       }
     });
-  }
-}
+  
+  }}
 

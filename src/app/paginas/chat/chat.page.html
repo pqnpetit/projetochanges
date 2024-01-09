@@ -1,0 +1,67 @@
+<ion-header translucent>
+  <ion-toolbar>
+   
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img [src]="friends.avatar">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{friends.name}}</h3>
+        <!-- Exiba o status online/offline -->
+        <p *ngIf="friends.is_online">Online</p>
+        <p *ngIf="!friends.is_online" class="transparent-background">Last seen: {{friends.last_seen}}</p>
+      </ion-label>
+      
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #contentRef fullscreen (ionScrollEnd)="onScrollEnd()">
+  <!-- Exiba as mensagens trocadas com o usuário em foco -->
+  <div class="chat-container" #chatContainerRef style="display: flex; flex-direction: column;">
+    <div *ngFor="let message of messages" class="message-container" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+      <div class="chat-bubble left" *ngIf="message.from === friends.name" style="margin-right: auto;">
+        <div class="message">{{message.text}}</div>
+        <div class="message-detail">
+          <span class="time">{{message.time}}</span>
+        </div>
+      </div>
+      <div class="chat-bubble right" *ngIf="message.from === login.username" style="margin-left: auto;">
+        <div class="message">{{message.text}}</div>
+        <div class="message-detail">
+        <br>  <span>{{message.time}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input de arquivo oculto -->
+  <input type="file" #fileInput style="display: none" (change)="fileSelected($event)" accept="image/*, application/pdf" multiple>
+</ion-content>
+
+
+
+
+
+
+
+<ion-footer class="ion-no-border">
+  <div class="footer-container">
+    <ion-button fill="clear" slot="start" (click)="fileInput.click()">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+    <ion-input [(ngModel)]="newMessage" placeholder="write a message"></ion-input>
+
+    <ion-textarea rows="1" placeholder="write a message"></ion-textarea>
+    <ion-button fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="mic"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" slot="end" (click)="sendMessage(newMessage)">
+      <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>

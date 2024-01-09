@@ -2,3 +2,35 @@
     --ion-background-color: black;
     --ion-color: white;
 }
+
+/* profile.page.scss */
+
+ion-img {
+    width: 100%;
+    height: 150px; /* ou a altura desejada para as imagens */
+    object-fit: cover; /* garante que as imagens mantenham a proporção e preencham o espaço definido */
+  }
+  
+/* Adicione este estilo ao seu arquivo CSS */
+.full-screen-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto com transparência */
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  .expanded-image {
+    width: 100vw; /* Largura igual à largura da viewport */
+    height: 100vh; /* Altura igual à altura da viewport */
+    object-fit: contain; /* Para manter a proporção da imagem */
+  }
+  
+  
+  
