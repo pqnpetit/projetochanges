@@ -34,15 +34,15 @@
       <ion-card-footer>
         <ion-row>
           <ion-col>
-            <ion-button (click)="likeFriend(friend)">
+            <ion-button class="likes"(click)="likeFriend(friend)">
               <ion-icon name="thumbs-up" *ngIf="!friend.liked"></ion-icon>
               <ion-icon name="thumbs-up-outline" *ngIf="friend.liked"></ion-icon>
-              {{ friend.likes }} Likes
+              {{ friend.likes }} <p>Likes</p>
             </ion-button>
           
-            <ion-button (click)="openCommentBox(friend)">
+            <ion-button class="comments" (click)="openCommentBox(friend)">
               <ion-icon name="chatbox"></ion-icon>
-              {{ friend.comments }} Comments
+              {{ friend.comments }} <p>Comments</p>
             </ion-button>
           </ion-col>
         </ion-row>

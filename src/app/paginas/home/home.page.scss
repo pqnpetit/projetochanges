@@ -1,10 +1,9 @@
+
+
 /* Estilização para a página Home */
-*{
- 
-  
+ion-content {
+  --ion-background-color: black;
 }
-
-
 
 ion-header {
     ion-toolbar {
@@ -103,6 +102,25 @@ margin-left: 25%;
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+.comments {
+  width: 60%;
+  height: 10%;
+}
+
+.likes {
+  width: 30%;
+  height: 10%;
+}
+
+ion-icon {
+  background-color: transparent;
+}
+
+p {
+  background-color: transparent;
+  margin-left: 5%;
 }
 
 

@@ -1,3 +1,19 @@
-*{
-    background-color: rgba(0, 0, 0, 0);
+ion-content {
+    --ion-background-color: black;
+}
+
+ion-fab {
+    background-color: transparent;
+}
+
+ion-fab-list {
+    background-color: transparent;
+}
+
+ion-fab-button {
+    background-color: transparent;
+}
+
+ion-icon {
+    background-color: transparent;
 }
